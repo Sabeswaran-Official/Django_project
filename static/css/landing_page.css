@@ -1,0 +1,19 @@
+
+.footer{
+    background-color: black;
+    color: aliceblue;
+    padding: 5px;
+}
+.links{
+    list-style-type:none;
+}
+.foo_links{
+    width: 60%;
+    display: flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+.navbar_header{
+    height: 300px;
+    width: 100vh;
+}

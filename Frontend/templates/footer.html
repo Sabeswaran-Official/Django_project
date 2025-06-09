@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    
+    <footer class="footer">
+        <p>&copy; <span id="year"></span><span id="sym"></span> Your Company. All rights reserved.</p>
+        <div class="foo_links">
+            <ul class="links" style="margin: 10px;">
+                <li><a href="/">About Us</a></li>
+                <li><a href="/">Contact</a></li>
+                <li><a href="/">Privacy Policy</a></li>
+                <li><a href="/">Terms of Service</a></li>
+            </ul>
+            <div class="soc_medi" style="margin: 10px;">
+                <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a><br>
+                <a href="https://facebook.com/yourpage" target="_blank">Facebook</a><br>
+                <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a><br>
+                <a href="https://youtube.com/yourhandle" target="_blank">Youtube</a>
+            </div>
+            <div>
+                <p>Email: contact@yourdomain.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Your St, City, Country</p>
+            </div>
+        </div>
+        <form action="" method="post" style="margin-top: 30px;">
+            <input type="email" name="email" placeholder="Subscribe to our newsletter" style="height: 34px;width: 210px;">
+            <button type="submit" class="btn btn-primary" >Subscribe</button>
+        </form>
+        <div style="display: block;display: flex;justify-content: space-between;align-items: center;margin: 20px 100px;">
+            <a href="#top" class="top">Back to Top ↑</a>
+            <p>Developed & maintained by <span style="color: blue;">Sabeswaran</span></p>
+        </div>
+        
+    </footer>
+</body>
+</html>
