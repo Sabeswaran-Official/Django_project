@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data</title>
+    <link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Students Directory</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <!-- Student Card -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Student_photo">
+                    <div class="card-body">
+                        <h5 class="card-title">Ayesha Khan</h5>
+                        <p class="card-text mb-1"><strong>E-mail_ID:</strong> ayesha@gmail.com</p>
+                        <p class="card-text mb-1"><strong>Reg_No:</strong> 21CSE1023</p>
+                        <p class="card-text mb-1"><strong>Course:</strong> B.Tech CSE</p>
+                        <p class="card-text mb-1"><strong>Year:</strong> 2nd Year</p>
+                        <p class="card-text"><strong>GPA:</strong> 8.7 / 10</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="mailto:ayesha@example.com" class="btn btn-sm btn-outline-primary w-100">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other students -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    {% for student in student_data %}
+                    <img src="{{student.photo}}" class="card-img-top" alt="Student Photo">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{student.full_name}}</h5>
+                        <p class="card-text mb-1"><strong>E-mail_ID:</strong> {{student.gmail_id}}</p>
+                        <p class="card-text mb-1"><strong>Reg_No:</strong> {{student.reg_no}}</p>
+                        <p class="card-text mb-1"><strong>Course:</strong> {{student.course}}</p>
+                        <p class="card-text mb-1"><strong>Year:</strong> {{student.year}}</p>
+                        <p class="card-text"><strong>GPA:</strong> {{student.gpa}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="mailto:{{student.gmail_id}}" class="btn btn-sm btn-outline-primary w-100">Contact</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

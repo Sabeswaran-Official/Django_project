@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <!-- Local Bootstrap CSS -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Optional: Local Font Awesome (only if downloaded), or use CDN temporarily -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/landing_page.css'%}">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        .navbar-custom {
+          background-color: #1f2937; /* Dark slate */
+        }
+        .navbar-custom .nav-link,
+        .navbar-custom .navbar-brand,
+        .navbar-custom .fa {
+          color: #f3f4f6;
+        }
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .fa:hover {
+          color: #60a5fa;
+        }
+    </style>
+</head>
+<body>
+  
+  <div class="navbar_header" style="height: 100px;width: 100vw;">
+    <div style="margin: 10px;display: flex;align-items: center;justify-content: space-between;">
+      <img src="{% static 'assets/SNS_logo.png' %}" alt="sns_logo" style="height: 80px;">
+      <h1>SNS College of Technology</h1>
+      <img src="{% static 'assets/NBA_image.png' %}" alt="NBA aggregration" style="height: 80px;display: flex;justify-content: end;">
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-custom" style="position:static;">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <i class="fas fa-globe-asia fa-lg me-2"></i> MyProject
+      </a>
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsing Nav Content -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/inventory/students_detail/">Student Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/login/"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Local Bootstrap JS -->
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+.loginpage{
+    border: 3px;
+    border-color: white;
+    border-style: solid;
+}
+a .link{
+    font-style: italic;
+}
+.log_btn{
+    list-style: none;
+}
