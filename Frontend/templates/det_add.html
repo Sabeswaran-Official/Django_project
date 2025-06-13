@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/det_add.css' %}">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="bg-secondary">
+    {% include 'navbar.html' %}
+
+    
+    <div class="container mt-5  "  style="max-width: 100vh;">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h4 class="mb-0">Add your details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            
+                            {% csrf_token %}
+                            <!-- Name -->
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="name" class="form-label">Full Name</label>
+                                <!-- <input type="text" class="form-control" id="name" name="name" placeholder="Eg: Ram" required> -->
+                                {{student_form.full_name}}
+                            </div>
+
+                            <!-- Username -->
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="username" class="form-label">Username</label>
+                                <!-- <input type="text" class="form-control" id="username" name="username" placeholder="Eg: ram" required> -->
+                                {{student_form.username}}
+                            </div>
+
+                            <!-- Registration Number -->
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="reg_no" class="form-label">Registration Number</label>
+                                <!-- <input type="text" class="form-control" id="reg_no" name="reg_no" placeholder="Eg: 21CSE2017" required> -->
+                                {{student_form.reg_no}}
+                            </div> 
+
+                            <!-- Course -->
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="course" class="form-label">Course</label>
+                                <!-- <input type="text" class="form-control" id="course" name="course" placeholder="Eg: B.E CSE" required> -->
+                                {{student_form.course}}
+                            </div> 
+
+                            <!-- Year -->
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="year" class="form-label">Year</label>
+                                <!-- <select class="form-select" id="year" name="year" required>
+                                    <option value="">Select Year</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                </select> -->
+                                {{student_form.year}}
+                            </div>  
+
+                            <!-- GPA -->
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="gpa" class="form-label">GPA</label>
+                                <!-- <input type="number" step="0.01" class="form-control" id="gpa" name="gpa" min="0" max="10" placeholder="Eg: 7" required> -->
+                                {{student_form.gpa}}
+                            </div> 
+
+                            <!-- Email -->
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="email" class="form-label">Email ID</label>
+                                <!-- <input type="email" class="form-control" id="email" name="email" placeholder="Eg: ram@gmail.com" required> -->
+                                {{student_form.gmail_id}}
+                            </div>
+
+                            <!-- Profile Photo -->
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="profile_photo" class="form-label">Profile Photo</label>
+                                <!-- <input class="form-control" type="file" id="profile_photo" name="profile_photo" accept="image/*" > -->
+                                {{student_form.photo}}
+                            </div>
+
+                            <!-- password
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div> -->
+
+                            <!-- Submit Button -->
+                            <div class="d-grid" style="margin: 10px;">
+                                <input type="submit" value="Add details" class="input_btn" >
+                            </div>
+          
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

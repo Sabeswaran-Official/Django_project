@@ -8,7 +8,7 @@ urlpatterns = [
     path('',LandingPage),
     path('login/',LoginPage),
     path('signup/',SignupPage),
-    path('',LogoutUser),
+    path('logout/',LogoutUser),
     
     
 ]

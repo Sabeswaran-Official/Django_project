@@ -16,8 +16,10 @@ class Students_data(models.Model):
     gpa=models.IntegerField(default=0)
     gmail_id=models.CharField(max_length=20,null=True)
     photo=models.ImageField(null=True,upload_to='media/')
-    password=models.CharField(max_length=50,null=True)
+    
 
+    # def __str__(self):
+    #     return self.id
     def __str__(self):
-        return self.full_name
+        return self.username
 

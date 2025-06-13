@@ -18,29 +18,15 @@
     <div class="container my-5">
         <h2 class="text-center mb-4">Students Directory</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-
+            {% csrf_token %}
             <!-- Student Card -->
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Student_photo">
-                    <div class="card-body">
-                        <h5 class="card-title">Ayesha Khan</h5>
-                        <p class="card-text mb-1"><strong>E-mail_ID:</strong> ayesha@gmail.com</p>
-                        <p class="card-text mb-1"><strong>Reg_No:</strong> 21CSE1023</p>
-                        <p class="card-text mb-1"><strong>Course:</strong> B.Tech CSE</p>
-                        <p class="card-text mb-1"><strong>Year:</strong> 2nd Year</p>
-                        <p class="card-text"><strong>GPA:</strong> 8.7 / 10</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="mailto:ayesha@example.com" class="btn btn-sm btn-outline-primary w-100">Contact</a>
-                    </div>
-                </div>
-            </div>
-
+            {% for student in student_data %}
+            
+            
             <!-- Repeat for other students -->
             <div class="col">
                 <div class="card h-100 shadow-sm">
-                    {% for student in student_data %}
+                    
                     <img src="{{student.photo}}" class="card-img-top" alt="Student Photo">
                     <div class="card-body">
                         <h5 class="card-title"> {{student.full_name}}</h5>
@@ -53,9 +39,20 @@
                     <div class="card-footer">
                         <a href="mailto:{{student.gmail_id}}" class="btn btn-sm btn-outline-primary w-100">Contact</a>
                     </div>
-                    {% endfor %}
+                    <div class="up_de" style="display: flex;justify-content: space-evenly;margin: 10px;">
+                        
+                        <a href="{% url 'student_update' student.id %}">
+                            <button class="btn btn-info">Update</button>
+                        </a>
+                        <a href="{% url 'student_delete' student.id %}">
+                            <button class="btn btn-info">Delete</button>
+                        </a>
+                    </div>
+                     
                 </div>
+
             </div>
+            {% endfor %}
         </div>
     </div>
     {% include 'footer.html' %}

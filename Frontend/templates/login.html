@@ -13,21 +13,21 @@
 </head>
 <body class="bg-secondary text-decoration">
   {% include 'navbar.html' %}
+  
     <div class="container mt-5 ,loginpage" style="width: 400px; background-color: aliceblue;border-radius: 10px;">
         <div class="row justify-content-center" style="border: 3px;border-style: solid;border-color:black;border-radius: 10px;border-style: double;">
           <div class="col-lg-6" style="margin: 20px;width: 300px;">
             <h2 class="mb-4">Login Page</h2>
+            
             <form action="" method="POST">
-
               {% csrf_token %}
-
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Username</label>
-                <input type="text" class="form-control background-color text-light" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control " name="username" id="exampleInputEmail1" aria-describedby="emailHelp" style="color: black;">
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control background-color text-light" name="password" id="exampleInputPassword1">
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1">
               </div>
 
               <a class="link" href="/signup/" style="text-decoration: none;color:blue;">Don't have an account? SignUp</a>

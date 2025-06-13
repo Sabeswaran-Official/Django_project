@@ -1,5 +1,3 @@
-
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +12,8 @@
 </head>
 <body class="bg-secondary">
     {% include 'navbar.html' %}
+
+    {% block content %}
     <div class="container mt-5  "  style="max-width: 100vh;">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
@@ -27,8 +27,12 @@
                             {% csrf_token %}
                             <!-- Name -->
                             <div class="mb-3" style="margin: 10px;">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <label for="fname" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="fname" name="fname" required>
+                            </div>
+                            <div class="mb-3" style="margin: 10px;">
+                                <label for="lname" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lname" name="lname" required>
                             </div>
 
                             <!-- Username -->
@@ -37,46 +41,10 @@
                                 <input type="text" class="form-control" id="username" name="username" required>
                             </div>
 
-                            <!-- Registration Number -->
-                            <div class="mb-3" style="margin: 10px;">
-                            <label for="reg_no" class="form-label">Registration Number</label>
-                            <input type="text" class="form-control" id="reg_no" name="reg_no" required>
-                            </div>
-
-                            <!-- Course -->
-                            <div class="mb-3" style="margin: 10px;">
-                            <label for="course" class="form-label">Course</label>
-                            <input type="text" class="form-control" id="course" name="course" required>
-                            </div>
-
-                            <!-- Year -->
-                            <div class="mb-3" style="margin: 10px;">
-                            <label for="year" class="form-label">Year</label>
-                            <select class="form-select" id="year" name="year" required>
-                                <option value="">Select Year</option>
-                                <option value="1st Year">1st Year</option>
-                                <option value="2nd Year">2nd Year</option>
-                                <option value="3rd Year">3rd Year</option>
-                                <option value="4th Year">4th Year</option>
-                            </select>
-                            </div>
-
-                            <!-- GPA -->
-                            <div class="mb-3" style="margin: 10px;">
-                            <label for="gpa" class="form-label">GPA</label>
-                            <input type="number" step="0.01" class="form-control" id="gpa" name="gpa" min="0" max="10" required>
-                            </div>
-
                             <!-- Email -->
                             <div class="mb-3" style="margin: 10px;">
                             <label for="email" class="form-label">Email ID</label>
                             <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-
-                            <!-- Profile Photo -->
-                            <div class="mb-3" style="margin: 10px;">
-                            <label for="profile_photo" class="form-label">Profile Photo</label>
-                            <input class="form-control" type="file" id="profile_photo" name="profile_photo" accept="image/*" >
                             </div>
 
                             <!-- password -->
@@ -88,8 +56,8 @@
                             <!-- Submit Button -->
                             <div class="d-grid" style="margin: 10px;">
                                 
-                                <button type="submit" class="btn btn-primary">Register</button>
-                                <a href="/login/" class="log_btn" style="color: blue;text-align: center;text-decoration:solid;margin-bottom: 10px;"><span>Already have an account,</span>Login</a>
+                                <button type="submit" value="Add details" class="btn btn-primary">Register</button>
+                                <a href="/login/" class="log_btn" style="color: blue;text-align: center;text-decoration:solid;margin-bottom: 10px;"><span>Already have an account,</span> Login</a>
                             </div>
           
                         </form>
@@ -98,5 +66,6 @@
             </div>
         </div>
     </div>
+    {% endblock %}
 </body>
 </html>

@@ -1,0 +1,9 @@
+.input_btn{
+    
+    color: blue;
+    margin-top: 5px;
+    width: fit-content;
+    display: flex;
+    justify-self: center;
+    
+}

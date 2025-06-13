@@ -1,6 +1,7 @@
 from django.shortcuts import render ,redirect
-from .models import *
 from django.contrib.auth import authenticate, login, logout
+from django.views.decorators.http import require_POST
+from .models import *
 
 # Create your views here.
 
@@ -9,9 +10,6 @@ def LandingPage(request):
     return render(request,'home.html')
 
 def LoginPage(request):
-    if request.user.is_authenticated:
-
-        return redirect('/inventory/students_detail/')
 
     context = {
         "error": ""
@@ -28,7 +26,7 @@ def LoginPage(request):
         if user is not None:
 
             login(request, user)
-  
+            print(f"Loggedin username:{user.username}")
         
         else:
 
@@ -37,6 +35,10 @@ def LoginPage(request):
             }
 
             return render(request, 'login.html', context)
+        
+        if request.user.is_authenticated:
+
+            return redirect('/inventory/student_list/')
 
     return render(request, 'login.html', context)
 
@@ -44,8 +46,7 @@ def LogoutUser(request):
 
     logout(request)
 
-    return redirect('')
-    return render(request,'home.html')
+    return redirect('/')
 
 def SignupPage(request):
 
@@ -66,7 +67,7 @@ def SignupPage(request):
             return render(request, 'signup.html', context)
         else:
 
-            new_user = User(full_name = request.POST['name'],username = request.POST['username'], reg_no = request.POST['reg_no'], course = request.POST['course'], year = request.POST['year'], gpa = request.POST['gpa'], gmail_id = request.POST['email'], photo = request.POST['profile_photo'])
+            new_user = User(first_name = request.POST['fname'],last_name = request.POST['lname'],username = request.POST['username'], email = request.POST['email'])
 
             new_user.set_password(request.POST['password'])
 
